@@ -1,0 +1,105 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/style.css" media="all" rel="stylesheet" type="text/css" /> */
+/* line 11, ../sass/style.scss */
+
+@font-face {
+font-family: 'source_sans_proregular';
+src: url('../fonts/sourcesanspro-regular-webfont.eot');
+src: url('../fonts/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro-regular-webfont.woff2') format('woff2'), url('../fonts/sourcesanspro-regular-webfont.woff') format('woff'), url('../fonts/sourcesanspro-regular-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'source_sans_prosemibold';
+src: url('../fonts/sourcesanspro-semibold-webfont.eot');
+src: url('../fonts/sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro-semibold-webfont.woff2') format('woff2'), url('../fonts/sourcesanspro-semibold-webfont.woff') format('woff'), url('../fonts/sourcesanspro-semibold-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+$clr1: #214860;
+$clr2: #356d90;
+$clr3: #ecf4fa;
+$clr4: #5c9fc9;
+$clr5: #00ddd0;
+$clr6: #cc194c;
+$clr7: #00aff1;
+$clr8: #ffb400;
+$f12:22px;
+$reg:'source_sans_proregular';
+$semi:'source_sans_prosemibold';
+/* Common Function ******/
+@mixin br($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin animate($animationduration) {
+    -webkit-transition: all $animationduration ease-out 0;
+    -moz-transition: all $animationduration ease-out 0;
+    -ms-transition: all $animationduration ease-out 0;
+    transition: all $animationduration ease-out 0;
+}
+@mixin fs($fs) {
+    font-size:$fs+px;
+}
+@mixin clearthis{
+    content:'';
+    clear:both;
+    display:block;
+}
+@mixin abscenter {
+    position:absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    margin:auto;
+}
+
+/* Common Function ******/
+.st-lib {
+    td { font-size:20px; border:1px solid $clr4; padding:5px 14px; }
+    .box { @include br(5px); height:60px; width:60px; }
+    .color1 { background-color:$clr1; }
+    .color2 { background-color:$clr2; }
+    .color3 { background-color:$clr3; }
+    .color4 { background-color:$clr4; }
+    .color5 { background-color:$clr5; }
+    .color6 { background-color:$clr6; }
+    .color7 { background-color:$clr7; }
+    .color8 { background-color:$clr8; }
+    .fs { font-size:$f12; }
+    .regular { font-family:$reg; }
+    .semibold { font-family:$semi; }
+    table { width:20%; float:left; margin-right:30px; }
+}
+
+.fs2, .fs{
+    @include animate(0.5s);
+    &:after{
+        @include clearthis;
+    }
+}
+
+.fs1{
+    @extend  .fs;
+}
+body {
+    @include fs(16)
+}
+ul ul, ol ol {
+    & {
+        margin: 0;
+        padding: {
+          left: 0;
+          right: 10px;
+          top: 15px;
+          bottom: 10px;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+First time setup in your system:
+
+http://rubyinstaller.org/downloads/
+install ruby 
+
+start ruby command prompt with administartor
+
+> gem install sass
+> gem install compass
+
+
+===============================
+Setup for starting any project:
+
+Finally, Go to your location of HTML
+
+> compass create
+  create sass project using compass create 
+  'config.rb': We can change default location to 'css' from 'stylesheet'
+
+> compass watch
+  compass watch (To watch changes in sass file) => This command should be run where the config.rb file 
+
+To stop watch (ctrl+c) press Y
+
